@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<title>Menu Capacitaciones</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contacto">Contacto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/capacitacion">Capacitacion</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<div class="container">
+			<h2 class="title d-flex justify-content-center align-items-center p-3">CAPACITACIONES</h2>
+
+			<div class="d-flex justify-content-center align-items-center p-3">
+				<a href="/capacitacion/nuevo">
+					<button class="btn btn-dark btn-sm m-3"> Agregar Capacitacion </button>
+				</a>
+				<br>
+				<a href="/capacitacion/lista">
+					<button class="btn btn-dark btn-sm m-3"> Ver Capacitaciones </button>
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>

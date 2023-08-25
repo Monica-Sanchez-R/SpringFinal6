@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/contacto">Contacto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/capacitacion">Capacitacion</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<div class="container">
+			<h2>Listado de Contactos</h2>
+			<div class="container">
+				<div th:if="${not #lists.isEmpty(capacitaciones)}">
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col">ID</th>
+								<th scope="col">Run Cliente</th>
+								<th scope="col">Lugar</th>
+								<th scope="col">Dia</th>
+								<th scope="col">Horario</th>
+								<th scope="col">Duracion</th>
+								<th scope="col">Cant. Asistentes</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+
+						<tbody class="table-group-divider">
+							<tr th:each="capacitacion: ${capacitaciones}">
+
+								<td><a th:href="@{/capacitacion/editar/{idCapacitacion}(idCapacitacion=${capacitacion.idCapacitacion})}"
+										class="btn btn-dark">Editar</a></td>
+
+								<td th:text="${capacitacion.idCapacitacion}">ID</td>
+								<td th:text="${capacitacion.idCliente}">Run Cliente</td>
+								<td th:text="${capacitacion.lugar}">Lugar</td>
+								<td th:text="${capacitacion.dia}">Dia</td>
+								<td th:text="${capacitacion.horario}">Horario</td>
+								<td th:text="${capacitacion.duracion}">Duracion</td>
+								<td th:text="${capacitacion.cantidadAsistentes}">Cant. Asistentes</td>
+
+								<td><a th:href="@{/capacitacion/eliminar/{idCapacitacion}(idCapacitacion=${capacitacion.idCapacitacion})}"
+										class="btn btn-dark">Eliminar</a></td>
+							</tr>
+
+						</tbody>
+					</table>
+
+				</div>
+				<br>
+				<div th:if="${#lists.isEmpty(capacitaciones)}">
+					<h3>No hay registros en esta lista</h3>
+				</div>
+				<br>
+				<div>
+					<a href="/capacitacion"><button class="btn btn-dark">Volver al Menu</button></a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+		
+	<title>CAPACITACION</title>
+</head>
+
+<body>
+	<main>
+		<h2 class="title d-flex justify-content-center align-items-center p-3"> CREAR CAPACITACION</h2>
+		<!-- Formulario de contacto -->
+		<div class="d-flex justify-content-center align-items-center p-3">
+
+			<form th:action="@{/capacitacion}" method="post" th:object="${capacitacion}">
+				<div class="form-row">
+
+					<div class="col-md-12 mb-3">
+						<label for="idCliente">Ingrese Run del Cliente:</label>
+						<input name="idCliente" th:field="*{idCliente}" type="text" class="form-control"
+								placeholder="Run del Cliente" />
+					</div>
+
+					<div class="col-md-12 mb-3">
+						<label for="lugar">Lugar:</label>
+						<input name="lugar" th:field="*{lugar}" class="form-control"
+							placeholder="Escriba el Lugar" />
+					</div>
+
+					<div class="col-md-12 mb-3">
+						<label for="dia">dia:</label>
+						<input name="dia" th:field="*{dia}" class="form-control" 
+							   placeholder="Ingrese el dia">
+					</div>
+
+					<div class="col-md-12 mb-3">
+						<label for="horario">Horario:</label>
+						<input name="horario" th:field="*{horario}" class="form-control" 
+							   placeholder="Escriba el Horario">
+					</div>
+					<div class="col-md-12 mb-3">
+						<label for="duracion">Duracion:</label>
+						<input name="duracion" th:field="*{duracion}" class="form-control" 
+							   placeholder="Escriba la Duracion del Evento">
+					</div>
+					
+					<div class="col-md-12 mb-3">
+						<label for="cantidadAsistentes">Cantidad de participantes:</label>
+						<input name="cantidadAsistentes" th:field="*{cantidadAsistentes}" class="form-control" 
+							   placeholder="Solo numeros">
+					</div>
+		
+				</div>
+				<div class="d-flex justify-content-center p-4">
+					<input type="submit" name="guardar" value="Guardar"/>
+				</div>
+			</form>
+			
+			<br>
+			
+		</div>
+	</main>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
